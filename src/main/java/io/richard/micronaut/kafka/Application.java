@@ -1,4 +1,4 @@
-package io.richard.microanut.kafka;
+package io.richard.micronaut.kafka;
 
 import io.micronaut.runtime.Micronaut;
 

@@ -1,83 +1,48 @@
 plugins {
-
     id("com.github.johnrengelman.shadow") version "7.1.2"
-
-    id("io.micronaut.application") version "3.7.5"
-
-    id("io.micronaut.test-resources") version "3.7.5"
-
+    id("io.micronaut.application") version "3.7.7"
+//    id("io.micronaut.test-resources") version "3.7.7"
 }
-
 
 version = "0.1"
-
 group = "com.example"
 
-
 repositories {
-
     mavenCentral()
-
-    maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
-
+//    maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
 }
-
 
 dependencies {
-
     annotationProcessor("io.micronaut:micronaut-http-validation")
-
     implementation("io.micronaut:micronaut-http-client")
-
     implementation("io.micronaut:micronaut-jackson-databind")
-
-    implementation("io.micronaut.kafka:micronaut-kafka")
-
+//    implementation("io.micronaut.kafka:micronaut-kafka:5.0.0-M1")
+    implementation("io.micronaut.kafka:micronaut-kafka:5.0.0-M1")
+//    implementation("io.micronaut.kafka:micronaut-kafka:4.5.3")
     implementation("jakarta.annotation:jakarta.annotation-api")
-
     runtimeOnly("ch.qos.logback:logback-classic")
-
     implementation("io.micronaut:micronaut-validation")
-
-
 }
 
-
 application {
-
     mainClass.set("com.example.Application")
-
 }
 
 java {
-
     sourceCompatibility = JavaVersion.toVersion("17")
-
     targetCompatibility = JavaVersion.toVersion("17")
-
 }
 
-
 graalvmNative.toolchainDetection = false
-
 micronaut {
-
     runtime("netty")
-
     testRuntime("junit5")
-
     processing {
-
         incremental(true)
-
         annotations("com.example.*")
-
     }
 
-    testResources {
-
-        sharedServer = true
-
-    }
-
+//    testResources {
+//        sharedServer = true
+//    }
 }
