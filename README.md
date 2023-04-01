@@ -2,6 +2,8 @@
 
 Testing PR [#598](https://github.com/micronaut-projects/micronaut-kafka/pull/598) with Current Snapshot 3.9.0-SNAPSHOT
 
+Issue is Resolved with `5.0.0-M1` and up.
+
 ```sh 
 Caused by: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.apache.kafka.clients.consumer.ConsumerRecord` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
  at [Source: (byte[])"{"door": "123","location": "abcd","destination": "9987"}"; line: 1, column: 2]
